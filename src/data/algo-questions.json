@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "The recurrence relation that arises in relation with the complexity of binary search is: [GATE CS 2007]",
+    "options": {
+      "a": "T(n) = 2T(n/2) + k",
+      "b": "T(n) = T(n/2) + k",
+      "c": "T(n) = T(n/2) + log n",
+      "d": "T(n) = T(n-1) + k"
+    },
+    "answer": "b",
+    "explanation": "Binary search works by dividing the search interval in half at each step. It makes one comparison (a constant amount of work, k) and then recurses on one half of the array. Therefore, the time to search in an array of size n is the time to search in an array of size n/2 plus a constant amount of work, which gives the recurrence T(n) = T(n/2) + k. This solves to O(log n)."
+  },
+  {
+    "id": 2,
+    "topic": "Graph Algorithms",
+    "question": "Dijkstra's single-source shortest path algorithm, when run from a vertex 'v' in a weighted, undirected graph, can fail if: [GATE CS 2010]",
+    "options": {
+      "a": "The graph has cycles.",
+      "b": "The graph has negative edge weights.",
+      "c": "The graph is disconnected.",
+      "d": "The graph has parallel edges."
+    },
+    "answer": "b",
+    "explanation": "Dijkstra's algorithm is a greedy algorithm that assumes that once it declares a shortest path to a vertex, it is final. This assumption holds only if edge weights are non-negative. If there are negative edge weights, it may fail to find the correct shortest path. For graphs with negative edges, algorithms like Bellman-Ford should be used."
+  },
+  {
+    "id": 3,
+    "topic": "Sorting",
+    "question": "Which of the following sorting algorithms is NOT a comparison-based sort? [GATE CS 2011]",
+    "options": {
+      "a": "Quick Sort",
+      "b": "Merge Sort",
+      "c": "Heap Sort",
+      "d": "Counting Sort"
+    },
+    "answer": "d",
+    "explanation": "Comparison-based sorts (like Quick Sort, Merge Sort, Heap Sort) determine the sorted order by comparing elements. Their lower bound for time complexity is Ω(n log n). Counting Sort is a non-comparison based (linear time) sorting algorithm that works by counting the number of occurrences of each distinct element in the input array. It is efficient only when the range of input values is not significantly larger than the number of elements."
+  },
+  {
+    "id": 4,
+    "topic": "Dynamic Programming",
+    "question": "The matrix chain multiplication problem can be solved efficiently using which algorithmic paradigm? [GATE CS 2008]",
+    "options": {
+      "a": "Greedy algorithm",
+      "b": "Dynamic programming",
+      "c": "Divide and conquer",
+      "d": "Backtracking"
+    },
+    "answer": "b",
+    "explanation": "The matrix chain multiplication problem has both optimal substructure (the optimal parenthesization of a chain of matrices contains within it optimal parenthesizations of sub-chains) and overlapping subproblems. These two properties are hallmarks of problems that can be solved efficiently using dynamic programming."
+  },
+  {
+    "id": 5,
+    "topic": "Graph Algorithms",
+    "question": "What is the time complexity of Breadth-First Search (BFS) on a graph with V vertices and E edges, represented by an adjacency list? [GATE CS 2014]",
+    "options": {
+      "a": "O(V)",
+      "b": "O(E)",
+      "c": "O(V + E)",
+      "d": "O(V * E)"
+    },
+    "answer": "c",
+    "explanation": "In BFS, each vertex is enqueued and dequeued exactly once, which takes O(V) time. The algorithm also explores every edge exactly once (for an undirected graph, twice). When using an adjacency list, the sum of the lengths of all lists is 2E. So, scanning all edges takes O(E) time. The total complexity is O(V + E)."
+  },
+  {
+    "id": 6,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "Let T(n) = T(n-1) + n. If T(0) = 1, then T(n) is: [GATE CS 2005]",
+    "options": {
+      "a": "O(n)",
+      "b": "O(n log n)",
+      "c": "O(n^2)",
+      "d": "O(2^n)"
+    },
+    "answer": "c",
+    "explanation": "This is a simple recurrence relation. We can unroll it: T(n) = T(n-1) + n = (T(n-2) + (n-1)) + n = T(n-2) + (n-1) + n = ... = T(0) + 1 + 2 + ... + n. Given T(0) = 1, T(n) = 1 + (n(n+1)/2). The dominant term is n^2, so the complexity is O(n^2)."
+  },
+  {
+    "id": 7,
+    "topic": "Greedy Algorithms",
+    "question": "Kruskal's algorithm for finding the Minimum Spanning Tree (MST) is an example of which type of algorithm? [GATE CS 2009]",
+    "options": {
+      "a": "Greedy algorithm",
+      "b": "Dynamic programming",
+      "c": "Divide and conquer",
+      "d": "Backtracking"
+    },
+    "answer": "a",
+    "explanation": "Kruskal's algorithm is a classic greedy algorithm. At each step, it makes a locally optimal choice by selecting the next cheapest edge from the graph, as long as adding that edge does not form a cycle. This greedy strategy is proven to yield a globally optimal solution (the MST)."
+  },
+  {
+    "id": 8,
+    "topic": "Sorting",
+    "question": "What is the worst-case time complexity of Quick Sort? [GATE CS 2007]",
+    "options": {
+      "a": "O(n)",
+      "b": "O(n log n)",
+      "c": "O(n^2)",
+      "d": "O(log n)"
+    },
+    "answer": "c",
+    "explanation": "While the average-case complexity of Quick Sort is O(n log n), its worst-case complexity is O(n^2). This worst case occurs when the pivot element chosen at each step is the smallest or largest element in the subarray, leading to unbalanced partitions. This often happens if the input array is already sorted or reverse sorted."
+  },
+  {
+    "id": 9,
+    "topic": "Graph Algorithms",
+    "question": "A topological sort of a Directed Acyclic Graph (DAG) gives: [GATE CS 2013]",
+    "options": {
+      "a": "A shortest path from a source to all other vertices.",
+      "b": "A minimum spanning tree of the graph.",
+      "c": "A linear ordering of vertices such that for every directed edge (u, v), vertex u comes before vertex v.",
+      "d": "The strongly connected components of the graph."
+    },
+    "answer": "c",
+    "explanation": "A topological sort or ordering is a linear arrangement of the vertices of a DAG such that for every directed edge from vertex 'u' to vertex 'v', 'u' appears before 'v' in the ordering. It is used for scheduling tasks with dependencies."
+  },
+  {
+    "id": 10,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "Which of the following is the tightest upper bound for the recurrence T(n) = 2T(n/2) + n? [GATE CS 2008]",
+    "options": {
+      "a": "O(n)",
+      "b": "O(n log n)",
+      "c": "O(n^2)",
+      "d": "O(2^n)"
+    },
+    "answer": "b",
+    "explanation": "This recurrence relation can be solved using the Master Theorem. T(n) = aT(n/b) + f(n). Here, a=2, b=2, and f(n)=n. We compare f(n) with n^(log_b a). log_b a = log_2 2 = 1. So we compare n with n^1. This corresponds to Case 2 of the Master Theorem, where f(n) = Θ(n^(log_b a)). The solution is T(n) = Θ(n^(log_b a) * log n) = Θ(n log n)."
+  },
+  {
+    "id": 11,
+    "topic": "Hashing",
+    "question": "In a hash table of size 10, using the hash function h(k) = k mod 10, where are the keys 12, 42, 33, 53, 23 inserted if linear probing is used to handle collisions? [GATE CS 2011]",
+    "options": {
+      "a": "12 in slot 2, 42 in slot 3, 33 in slot 4, 53 in slot 5, 23 in slot 6",
+      "b": "12 in slot 2, 42 in slot 2, 33 in slot 3, 53 in slot 3, 23 in slot 3",
+      "c": "12 in slot 2, 42 in slot 3, 33 in slot 4, 53 in slot 6, 23 in slot 5",
+      "d": "12 in slot 2, 42 in slot 3, 33 in slot 5, 53 in slot 4, 23 in slot 6"
+    },
+    "answer": "a",
+    "explanation": "Let's trace the insertions: \n1. h(12) = 12 mod 10 = 2. Slot 2 is empty. Insert 12 at slot 2. \n2. h(42) = 42 mod 10 = 2. Slot 2 is occupied. Probe next slot. Slot 3 is empty. Insert 42 at slot 3. \n3. h(33) = 33 mod 10 = 3. Slot 3 is occupied. Probe next slot. Slot 4 is empty. Insert 33 at slot 4. \n4. h(53) = 53 mod 10 = 3. Slot 3 is occupied. Probe 4 (occupied). Probe 5. Slot 5 is empty. Insert 53 at slot 5. \n5. h(23) = 23 mod 10 = 3. Slot 3 occupied. Probe 4, 5 (occupied). Probe 6. Slot 6 is empty. Insert 23 at slot 6. The final positions are 2, 3, 4, 5, 6."
+  },
+  {
+    "id": 12,
+    "topic": "Graph Algorithms",
+    "question": "The Floyd-Warshall algorithm is used to find: [GATE CS 2012]",
+    "options": {
+      "a": "Single-source shortest paths.",
+      "b": "All-pairs shortest paths.",
+      "c": "A minimum spanning tree.",
+      "d": "Topological sort."
+    },
+    "answer": "b",
+    "explanation": "The Floyd-Warshall algorithm is a dynamic programming algorithm used to find the shortest paths between all pairs of vertices in a weighted, directed graph. Its complexity is O(V^3)."
+  },
+  {
+    "id": 13,
+    "topic": "Sorting",
+    "question": "Which sorting algorithm has the best performance when the input array is almost sorted? [GATE CS 2010]",
+    "options": {
+      "a": "Quick Sort",
+      "b": "Merge Sort",
+      "c": "Heap Sort",
+      "d": "Insertion Sort"
+    },
+    "answer": "d",
+    "explanation": "Insertion Sort has a time complexity of O(n^2) in the average and worst case, but it performs exceptionally well on arrays that are already nearly sorted. In the best case (an already sorted array), its complexity is O(n) because it only needs to make one comparison per element."
+  },
+  {
+    "id": 14,
+    "topic": "Dynamic Programming",
+    "question": "The Longest Common Subsequence (LCS) problem exhibits which of the following properties? [GATE CS 2013]",
+    "options": {
+      "a": "Greedy choice property",
+      "b": "Optimal substructure",
+      "c": "Both Greedy choice and Optimal substructure",
+      "d": "It is not an optimization problem."
+    },
+    "answer": "b",
+    "explanation": "The LCS problem has optimal substructure because the solution to the problem can be constructed from the optimal solutions of its subproblems. However, it does not have the greedy choice property, which is why a greedy approach does not work for LCS. This makes it a prime candidate for dynamic programming."
+  },
+  {
+    "id": 15,
+    "topic": "Graph Algorithms",
+    "question": "In an unweighted, undirected graph, the shortest path between two vertices can be found using: [GATE CS 2009]",
+    "options": {
+      "a": "Dijkstra's algorithm",
+      "b": "Bellman-Ford algorithm",
+      "c": "Breadth-First Search (BFS)",
+      "d": "Depth-First Search (DFS)"
+    },
+    "answer": "c",
+    "explanation": "In an unweighted graph, the shortest path is simply the path with the fewest edges. Breadth-First Search (BFS) explores the graph layer by layer from the source vertex. This property guarantees that the first time BFS reaches a destination vertex, it will have done so via a path with the minimum number of edges."
+  },
+  {
+    "id": 16,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "Which of the following functions grows the fastest? [GATE CS 2014]",
+    "options": {
+      "a": "n^2",
+      "b": "n log n",
+      "c": "2^n",
+      "d": "n!"
+    },
+    "answer": "d",
+    "explanation": "The order of growth from slowest to fastest is generally: log n, n, n log n, n^2, n^3, ..., 2^n, 3^n, ..., n!. Factorial growth (n!) is much faster than exponential growth (2^n). Therefore, n! grows the fastest."
+  },
+  {
+    "id": 17,
+    "topic": "Greedy Algorithms",
+    "question": "Prim's algorithm for finding the Minimum Spanning Tree starts with: [GATE CS 2011]",
+    "options": {
+      "a": "The edge with the lowest weight.",
+      "b": "A forest of single-vertex trees.",
+      "c": "An arbitrary vertex.",
+      "d": "A cycle of vertices."
+    },
+    "answer": "c",
+    "explanation": "Prim's algorithm builds the MST by growing a single tree. It starts from an arbitrary vertex (the first tree) and at each step, it adds the cheapest possible edge that connects a vertex in the tree to a vertex outside the tree. This is in contrast to Kruskal's, which starts with a forest of vertices and merges them."
+  },
+  {
+    "id": 18,
+    "topic": "Sorting",
+    "question": "Merge Sort is a classic example of which algorithmic paradigm? [GATE CS 2006]",
+    "options": {
+      "a": "Greedy",
+      "b": "Dynamic Programming",
+      "c": "Divide and Conquer",
+      "d": "Backtracking"
+    },
+    "answer": "c",
+    "explanation": "Merge Sort follows the Divide and Conquer strategy: \n1. **Divide**: The array is divided into two halves. \n2. **Conquer**: Each half is recursively sorted. \n3. **Combine**: The two sorted halves are merged to produce the final sorted array."
+  },
+  {
+    "id": 19,
+    "topic": "Graph Algorithms",
+    "question": "A graph is said to be bipartite if: [GATE CS 2015]",
+    "options": {
+      "a": "It has two connected components.",
+      "b": "It has no cycles.",
+      "c": "Its vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to one in the other.",
+      "d": "Every vertex has a degree of 2."
+    },
+    "answer": "c",
+    "explanation": "This is the definition of a bipartite graph. The two sets of vertices are often called 'partitions'. An equivalent property is that a graph is bipartite if and only if it has no odd-length cycles."
+  },
+  {
+    "id": 20,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "The solution to the recurrence T(n) = 8T(n/2) + n^2 is: [GATE CS 2013]",
+    "options": {
+      "a": "O(n^2)",
+      "b": "O(n^2 log n)",
+      "c": "O(n^3)",
+      "d": "O(n^4)"
+    },
+    "answer": "c",
+    "explanation": "Using the Master Theorem: T(n) = aT(n/b) + f(n). Here, a=8, b=2, and f(n)=n^2. We compare f(n) with n^(log_b a). log_b a = log_2 8 = 3. So we compare n^2 with n^3. Since f(n) = n^2 = O(n^(3-ε)) for ε=1, this is Case 1 of the Master Theorem. The solution is T(n) = Θ(n^(log_b a)) = Θ(n^3)."
+  },
+  {
+    "id": 21,
+    "topic": "Heaps & Priority Queues",
+    "question": "Building a binary heap from an array of n elements can be done in what time complexity? [GATE CS 2008]",
+    "options": {
+      "a": "O(n^2)",
+      "b": "O(n log n)",
+      "c": "O(n)",
+      "d": "O(log n)"
+    },
+    "answer": "c",
+    "explanation": "While inserting n elements one by one into a heap takes O(n log n) time, the more efficient 'heapify' algorithm (starting from the last non-leaf node and working upwards) can build the entire heap in-place in linear time, O(n)."
+  },
+  {
+    "id": 22,
+    "topic": "Graph Algorithms",
+    "question": "A Depth-First Search (DFS) of a graph is typically implemented using a: [GATE CS 2012]",
+    "options": {
+      "a": "Queue",
+      "b": "Stack",
+      "c": "Heap",
+      "d": "Hash Table"
+    },
+    "answer": "b",
+    "explanation": "DFS explores a branch of a graph as deeply as possible before backtracking. This 'last-in, first-out' behavior is naturally implemented using a stack (either the program's call stack via recursion or an explicit stack data structure). BFS, in contrast, uses a queue."
+  },
+  {
+    "id": 23,
+    "topic": "Sorting",
+    "question": "Which of the following is an in-place sorting algorithm? [GATE CS 2010]",
+    "options": {
+      "a": "Merge Sort",
+      "b": "Counting Sort",
+      "c": "Radix Sort",
+      "d": "Heap Sort"
+    },
+    "answer": "d",
+    "explanation": "An in-place algorithm is one that transforms the input using no auxiliary data structure (or a very small, constant amount of extra space). Heap Sort can sort an array in-place by building a heap within the array and then repeatedly extracting the maximum element. Merge Sort requires O(n) auxiliary space for the merge step. Counting and Radix sort also require extra space for their counting arrays."
+  },
+  {
+    "id": 24,
+    "topic": "Greedy Algorithms",
+    "question": "The fractional knapsack problem can be solved optimally using which type of algorithm? [GATE CS 2009]",
+    "options": {
+      "a": "Greedy",
+      "b": "Dynamic Programming",
+      "c": "Divide and Conquer",
+      "d": "Brute Force"
+    },
+    "answer": "a",
+    "explanation": "The fractional knapsack problem has the greedy choice property. The optimal solution can be found by greedily choosing the items with the highest value-to-weight ratio first and taking as much of them as possible (including fractions). This is in contrast to the 0/1 knapsack problem, which does not have the greedy choice property and requires dynamic programming."
+  },
+  {
+    "id": 25,
+    "topic": "Graph Algorithms",
+    "question": "In a simple undirected graph with V vertices, what is the maximum number of edges? [GATE CS 2014]",
+    "options": {
+      "a": "V-1",
+      "b": "V",
+      "c": "V * (V-1) / 2",
+      "d": "V^2"
+    },
+    "answer": "c",
+    "explanation": "A simple graph has no self-loops or parallel edges. In a complete graph (where every vertex is connected to every other vertex), the number of edges is the number of ways to choose 2 vertices from V, which is given by the combination formula C(V, 2) = V * (V-1) / 2. This is the maximum possible number of edges."
+  },
+  {
+    "id": 26,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "The time complexity of finding the height of a balanced binary search tree with n nodes is: [GATE CS 2013]",
+    "options": {
+      "a": "O(n)",
+      "b": "O(n log n)",
+      "c": "O(log n)",
+      "d": "O(1)"
+    },
+    "answer": "c",
+    "explanation": "The height of a balanced binary search tree is O(log n). Finding the height involves traversing a path from the root to the deepest leaf. In a balanced tree, the length of this path is logarithmic with respect to the number of nodes."
+  },
+  {
+    "id": 27,
+    "topic": "Searching",
+    "question": "Binary search algorithm can be applied to: [GATE CS 2007]",
+    "options": {
+      "a": "Any array",
+      "b": "A sorted linked list",
+      "c": "A sorted array",
+      "d": "A binary tree"
+    },
+    "answer": "c",
+    "explanation": "Binary search relies on the ability to access the middle element of a search space in constant time to divide it in half. This is possible with a sorted array due to direct indexing. While a linked list can be sorted, accessing its middle element takes O(n) time, making binary search inefficient."
+  },
+  {
+    "id": 28,
+    "topic": "Graph Algorithms",
+    "question": "The number of edges in a complete graph with n vertices is: [GATE CS 2010]",
+    "options": {
+      "a": "n-1",
+      "b": "n(n-1)/2",
+      "c": "n(n+1)/2",
+      "d": "n"
+    },
+    "answer": "b",
+    "explanation": "A complete graph is an undirected graph where every pair of distinct vertices is connected by a unique edge. The number of such pairs is C(n, 2) = n(n-1)/2."
+  },
+  {
+    "id": 29,
+    "topic": "Sorting",
+    "question": "Which of the following sorting algorithms is stable? [GATE CS 2011]",
+    "options": {
+      "a": "Quick Sort",
+      "b": "Heap Sort",
+      "c": "Selection Sort",
+      "d": "Merge Sort"
+    },
+    "answer": "d",
+    "explanation": "A sorting algorithm is 'stable' if it preserves the relative order of equal-valued elements from the input array. Merge Sort can be implemented to be stable. Standard implementations of Quick Sort, Heap Sort, and Selection Sort are generally not stable."
+  },
+  {
+    "id": 30,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "What is the Big-O complexity of the function f(n) = n^3 + 20n^2 + 5000? [GATE CS 2008]",
+    "options": {
+      "a": "O(1)",
+      "b": "O(n)",
+      "c": "O(n^2)",
+      "d": "O(n^3)"
+    },
+    "answer": "d",
+    "explanation": "In Big-O notation, we are concerned with the asymptotic upper bound, which is determined by the fastest-growing term in the function. As n becomes very large, the n^3 term dominates the n^2 term and the constant term. Therefore, the complexity is O(n^3)."
+  },
+  {
+    "id": 31,
+    "topic": "Graph Algorithms",
+    "question": "How many edges are there in a tree with 10 vertices? [GATE CS 2012]",
+    "options": {
+      "a": "8",
+      "b": "9",
+      "c": "10",
+      "d": "11"
+    },
+    "answer": "b",
+    "explanation": "A fundamental property of a tree is that if it has V vertices, it must have exactly V-1 edges. Therefore, a tree with 10 vertices has 10 - 1 = 9 edges."
+  },
+  {
+    "id": 32,
+    "topic": "Dynamic Programming",
+    "question": "Which of the following problems does NOT exhibit optimal substructure? [GATE CS 2014]",
+    "options": {
+      "a": "Matrix Chain Multiplication",
+      "b": "0/1 Knapsack",
+      "c": "All-Pairs Shortest Path",
+      "d": "Longest simple path in an unweighted graph"
+    },
+    "answer": "d",
+    "explanation": "Optimal substructure means an optimal solution to the problem contains optimal solutions to subproblems. This holds for Matrix Chain Multiplication, 0/1 Knapsack, and All-Pairs Shortest Path. However, the longest simple path problem does not have this property. A longest path from u to v might go through w, but the subpath from u to w is not necessarily the longest path from u to w."
+  },
+  {
+    "id": 33,
+    "topic": "Sorting",
+    "question": "What is the time complexity of the best case for Bubble Sort? [GATE CS 2009]",
+    "options": {
+      "a": "O(n^2)",
+      "b": "O(n log n)",
+      "c": "O(n)",
+      "d": "O(1)"
+    },
+    "answer": "c",
+    "explanation": "The best case for Bubble Sort occurs when the input array is already sorted. A properly implemented Bubble Sort includes a flag to check if any swaps were made during a pass. If a full pass is completed with no swaps, the algorithm can terminate early. For an already sorted array, this will happen after the very first pass, which takes O(n) time."
+  },
+  {
+    "id": 34,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "The Θ notation provides an asymptotic: [GATE CS 2013]",
+    "options": {
+      "a": "Upper bound",
+      "b": "Lower bound",
+      "c": "Tight bound (both upper and lower)",
+      "d": "Average case bound"
+    },
+    "answer": "c",
+    "explanation": "Θ (Theta) notation describes a tight bound. A function f(n) is Θ(g(n)) if it is bounded both from above and from below by constant multiples of g(n) for large n. It represents the exact asymptotic behavior, unlike Big-O (upper bound) or Omega (lower bound)."
+  },
+  {
+    "id": 35,
+    "topic": "Graph Algorithms",
+    "question": "The number of connected components in a graph G can be found using: [GATE CS 2011]",
+    "options": {
+      "a": "Either BFS or DFS",
+      "b": "Only BFS",
+      "c": "Only DFS",
+      "d": "Dijkstra's algorithm"
+    },
+    "answer": "a",
+    "explanation": "To find the number of connected components, you can iterate through all vertices. If a vertex has not been visited, start a traversal (either BFS or DFS) from that vertex and mark all reachable vertices as visited. Each time you start a new traversal on an unvisited vertex, you have found a new connected component. You simply count how many times you start a new traversal."
+  },
+  {
+    "id": 36,
+    "topic": "Sorting",
+    "question": "In a max-heap, the parent node is always: [GATE CS 2008]",
+    "options": {
+      "a": "Less than or equal to its children.",
+      "b": "Greater than or equal to its children.",
+      "c": "Equal to one of its children.",
+      "d": "In a random order with respect to its children."
+    },
+    "answer": "b",
+    "explanation": "This is the definition of the max-heap property. For every node 'i' other than the root, the value of the node is less than or equal to the value of its parent. This implies that the parent node is always greater than or equal to its children, ensuring the maximum element is at the root."
+  },
+  {
+    "id": 37,
+    "topic": "Greedy Algorithms",
+    "question": "Which of the following is true for Huffman Coding? [GATE CS 2012]",
+    "options": {
+      "a": "It is a lossless data compression algorithm.",
+      "b": "It is a lossy data compression algorithm.",
+      "c": "It is an encryption algorithm.",
+      "d": "It is a sorting algorithm."
+    },
+    "answer": "a",
+    "explanation": "Huffman Coding is a widely used greedy algorithm for lossless data compression. It works by creating a variable-length prefix code tree based on the frequencies of characters in the input text, assigning shorter codes to more frequent characters."
+  },
+  {
+    "id": 38,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "The recurrence T(n) = T(n-1) + log n is solved to: [GATE CS 2010]",
+    "options": {
+      "a": "O(log n)",
+      "b": "O(n)",
+      "c": "O(n log n)",
+      "d": "O(log log n)"
+    },
+    "answer": "c",
+    "explanation": "Unrolling the recurrence: T(n) = T(n-1) + log n = T(n-2) + log(n-1) + log n = ... = T(0) + log 1 + log 2 + ... + log n. This sum is equal to log(n!). Using Stirling's approximation for n!, log(n!) is approximately n log n. Therefore, T(n) = O(n log n)."
+  },
+  {
+    "id": 39,
+    "topic": "Graph Algorithms",
+    "question": "Which algorithm is used to detect a cycle in an undirected graph? [GATE CS 2014]",
+    "options": {
+      "a": "BFS",
+      "b": "DFS",
+      "c": "Either BFS or DFS",
+      "d": "Prim's algorithm"
+    },
+    "answer": "c",
+    "explanation": "Cycles in an undirected graph can be detected using either BFS or DFS. In DFS, a cycle is detected if we encounter a visited vertex that is not the immediate parent of the current vertex in the DFS tree. In BFS, a cycle is detected if we encounter a visited vertex that is already in the queue."
+  },
+  {
+    "id": 40,
+    "topic": "Sorting",
+    "question": "Which of the following is the most suitable data structure for implementing a priority queue? [GATE CS 2009]",
+    "options": {
+      "a": "Linked List",
+      "b": "Array",
+      "c": "Heap",
+      "d": "Stack"
+    },
+    "answer": "c",
+    "explanation": "A heap (specifically, a binary heap) is the most efficient data structure for implementing a priority queue. It allows for both insertion of new elements and extraction of the minimum/maximum element in O(log n) time, which is crucial for priority queue operations."
+  },
+  {
+    "id": 41,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "If f(n) = O(g(n)) and g(n) = O(h(n)), then which of the following is true? [GATE CS 2011]",
+    "options": {
+      "a": "f(n) = Ω(h(n))",
+      "b": "f(n) = Θ(h(n))",
+      "c": "f(n) = O(h(n))",
+      "d": "No conclusion can be drawn."
+    },
+    "answer": "c",
+    "explanation": "This is the transitive property of Big-O notation. If f(n) is asymptotically upper-bounded by g(n), and g(n) is asymptotically upper-bounded by h(n), then it logically follows that f(n) must also be asymptotically upper-bounded by h(n)."
+  },
+  {
+    "id": 42,
+    "topic": "Graph Algorithms",
+    "question": "In a connected, undirected graph with V vertices, a spanning tree will have how many edges? [GATE CS 2013]",
+    "options": {
+      "a": "V",
+      "b": "V-1",
+      "c": "V+1",
+      "d": "V/2"
+    },
+    "answer": "b",
+    "explanation": "A spanning tree is a subgraph that includes all vertices of the original graph and is a tree (i.e., has no cycles). A fundamental property of any tree is that it has exactly V-1 edges, where V is the number of vertices."
+  },
+  {
+    "id": 43,
+    "topic": "Dynamic Programming",
+    "question": "The 0/1 Knapsack problem is an example of a problem that is: [GATE CS 2008]",
+    "options": {
+      "a": "Solvable by a greedy algorithm.",
+      "b": "NP-Hard.",
+      "c": "Solvable in polynomial time.",
+      "d": "Both b and c are correct."
+    },
+    "answer": "b",
+    "explanation": "The 0/1 Knapsack problem is a classic NP-Hard problem. While it can be solved using dynamic programming, the complexity of that solution is O(nW), where n is the number of items and W is the knapsack capacity. Since the complexity depends on the value of W (which can be exponentially large relative to the input size in bits), the algorithm is pseudo-polynomial, not polynomial. Thus, the problem is NP-Hard."
+  },
+  {
+    "id": 44,
+    "topic": "Sorting",
+    "question": "What is the lower bound for the time complexity of any comparison-based sorting algorithm? [GATE CS 2012]",
+    "options": {
+      "a": "Ω(n)",
+      "b": "Ω(n^2)",
+      "c": "Ω(log n)",
+      "d": "Ω(n log n)"
+    },
+    "answer": "d",
+    "explanation": "Any algorithm that sorts by comparing elements can be modeled as a decision tree. The number of leaves in this tree must be at least n! (the number of possible permutations). The height of a binary tree with n! leaves is at least log₂(n!), which, by Stirling's approximation, is Ω(n log n). This establishes the lower bound for comparison-based sorting."
+  },
+  {
+    "id": 45,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "Consider the code: `for (i=1; i<=n; i*=2) { for (j=1; j<=i; j++) { ... } }`. What is the time complexity? [GATE CS 2010]",
+    "options": {
+      "a": "O(n)",
+      "b": "O(n log n)",
+      "c": "O(log n)",
+      "d": "O(n^2)"
+    },
+    "answer": "a",
+    "explanation": "The outer loop variable 'i' doubles in each iteration (1, 2, 4, 8, ...), so it runs log₂(n) times. The inner loop runs 'i' times. The total number of operations is the sum 1 + 2 + 4 + 8 + ... + n (the values of 'i'). This is a geometric series. The sum is approximately 2n - 1. Therefore, the overall time complexity is O(n)."
+  },
+  {
+    "id": 46,
+    "topic": "Graph Algorithms",
+    "question": "Bellman-Ford algorithm is used to find single-source shortest paths in a graph that may have: [GATE CS 2009]",
+    "options": {
+      "a": "Negative weight edges but no negative weight cycles.",
+      "b": "Only positive weight edges.",
+      "c": "Negative weight cycles.",
+      "d": "No cycles."
+    },
+    "answer": "a",
+    "explanation": "Unlike Dijkstra's algorithm, the Bellman-Ford algorithm can handle graphs with negative weight edges. Its main feature is its ability to detect if the graph contains a negative weight cycle reachable from the source (in which case, a shortest path is not well-defined)."
+  },
+  {
+    "id": 47,
+    "topic": "Greedy Algorithms",
+    "question": "Fractional knapsack problems have a greedy choice property. What does this mean? [GATE CS 2011]",
+    "options": {
+      "a": "Any choice made is final.",
+      "b": "A locally optimal choice leads to a globally optimal solution.",
+      "c": "The problem can be broken down into smaller subproblems.",
+      "d": "All choices must be considered."
+    },
+    "answer": "b",
+    "explanation": "The greedy choice property is the core idea behind greedy algorithms. It means that you can arrive at the overall optimal solution by making a sequence of locally optimal choices (the 'greedy' choices) at each step, without ever having to reconsider a previous choice."
+  },
+  {
+    "id": 48,
+    "topic": "Sorting",
+    "question": "A pivot element in Quick Sort is used to: [GATE CS 2014]",
+    "options": {
+      "a": "Sort the array.",
+      "b": "Partition the array into two sub-arrays.",
+      "c": "Find the median of the array.",
+      "d": "Merge two sorted arrays."
+    },
+    "answer": "b",
+    "explanation": "In Quick Sort, a pivot element is chosen from the array. The array is then partitioned around this pivot, meaning all elements smaller than the pivot are moved to its left, and all elements greater than the pivot are moved to its right. The algorithm then recursively sorts these two sub-arrays."
+  },
+  {
+    "id": 49,
+    "topic": "Time Complexity & Asymptotic Analysis",
+    "question": "Which of the following represents the relationship between f(n)=n and g(n)=n log n? [GATE CS 2012]",
+    "options": {
+      "a": "f(n) = O(g(n))",
+      "b": "f(n) = Ω(g(n))",
+      "c": "f(n) = Θ(g(n))",
+      "d": "None of the above."
+    },
+    "answer": "a",
+    "explanation": "The function f(n) = n grows strictly slower than the function g(n) = n log n for large n. Therefore, f(n) is asymptotically upper-bounded by g(n), which is written as f(n) = O(g(n)). It is not lower-bounded by g(n), so it is not Ω(g(n)) or Θ(g(n))."
+  },
+  {
+    "id": 50,
+    "topic": "Graph Algorithms",
+    "question": "The data structure used in a standard implementation of Prim's algorithm for MST is: [GATE CS 2010]",
+    "options": {
+      "a": "Stack",
+      "b": "Queue",
+      "c": "Priority Queue",
+      "d": "Hash Table"
+    },
+    "answer": "c",
+    "explanation": "Prim's algorithm works by growing a tree. At each step, it needs to find the minimum weight edge that connects a vertex in the current tree to a vertex outside the tree. A priority queue (often implemented as a min-heap) is the ideal data structure to efficiently find this minimum weight edge at each step."
+  }
+]

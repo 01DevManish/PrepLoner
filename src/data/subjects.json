@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "name": "Engineering Mathematics",
+    "topics": [
+      { "id": 1, "name": "Discrete Mathematics" },
+      { "id": 2, "name": "Linear Algebra" },
+      { "id": 3, "name": "Calculus" },
+      { "id": 4, "name": "Probability and Statistics" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Digital Logic",
+    "topics": [
+      { "id": 5, "name": "Boolean Algebra" },
+      { "id": 6, "name": "Combinational and Sequential Circuits" },
+      { "id": 7, "name": "Number Representations" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Computer Organization and Architecture",
+    "topics": [
+      { "id": 8, "name": "Machine Instructions and Addressing Modes" },
+      { "id": 9, "name": "CPU Data Path and Control Unit" },
+      { "id": 10, "name": "Memory Hierarchy (Cache, Main Memory)" },
+      { "id": 11, "name": "I/O Interface" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Programming and Data Structures",
+    "topics": [
+      { "id": 12, "name": "Programming in C" },
+      { "id": 13, "name": "Recursion" },
+      { "id": 14, "name": "Arrays, Stacks, Queues" },
+      { "id": 15, "name": "Linked Lists" },
+      { "id": 16, "name": "Trees and Heaps" },
+      { "id": 17, "name": "Graphs" },
+      { "id": 18, "name": "Hashing" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Algorithms",
+    "topics": [
+      { "id": 19, "name": "Algorithm Analysis (Asymptotic Notation)" },
+      { "id": 20, "name": "Searching, Sorting, Hashing" },
+      { "id": 21, "name": "Graph Traversal (BFS, DFS)" },
+      { "id": 22, "name": "Greedy Algorithms" },
+      { "id": 23, "name": "Dynamic Programming" },
+      { "id": 24, "name": "Divide and Conquer" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Theory of Computation",
+    "topics": [
+      { "id": 25, "name": "Regular Expressions and Finite Automata" },
+      { "id": 26, "name": "Context-Free Grammars and Push-Down Automata" },
+      { "id": 27, "name": "Turing Machines and Undecidability" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Compiler Design",
+    "topics": [
+      { "id": 28, "name": "Lexical Analysis" },
+      { "id": 29, "name": "Parsing (LL, LR)" },
+      { "id": 30, "name": "Syntax-Directed Translation" },
+      { "id": 31, "name": "Code Optimization" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Operating Systems",
+    "topics": [
+      { "id": 32, "name": "System Calls, Processes, Threads" },
+      { "id": 33, "name": "CPU Scheduling" },
+      { "id": 34, "name": "Process Synchronization (Semaphores, Mutex)" },
+      { "id": 35, "name": "Deadlocks" },
+      { "id": 36, "name": "Memory Management and Virtual Memory" },
+      { "id": 37, "name": "File Systems" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Database Management Systems (DBMS)",
+    "topics": [
+      { "id": 38, "name": "ER-Model and Relational Model" },
+      { "id": 39, "name": "Relational Algebra and Tuple Calculus" },
+      { "id": 40, "name": "SQL" },
+      { "id": 41, "name": "Normalization (1NF, 2NF, 3NF, BCNF)" },
+      { "id": 42, "name": "File Organization and Indexing (B, B+ Trees)" },
+      { "id": 43, "name": "Transactions and Concurrency Control" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Computer Networks",
+    "topics": [
+      { "id": 44, "name": "OSI and TCP/IP Protocol Stacks" },
+      { "id": 45, "name": "Data Link Layer (Framing, Error Detection)" },
+      { "id": 46, "name": "Network Layer (Routing Algorithms)" },
+      { "id": 47, "name": "Transport Layer (TCP/UDP and Congestion Control)" },
+      { "id": 48, "name": "Application Layer Protocols (DNS, HTTP, SMTP)" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "General Aptitude",
+    "topics": [
+      { "id": 49, "name": "Verbal Aptitude" },
+      { "id": 50, "name": "Quantitative Aptitude" },
+      { "id": 51, "name": "Analytical Aptitude" },
+      { "id": 52, "name": "Spatial Aptitude" }
+    ]
+  }
+]
