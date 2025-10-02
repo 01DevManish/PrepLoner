@@ -868,6 +868,391 @@
     "answer": "b",
     "explanation": "In link-state routing, every router in the network generates its own Link State Packet (LSP). The LSP describes the router's directly connected links and their costs. These individual LSPs are then flooded throughout the network. Therefore, for a network with 6 routers, there will be 6 LSPs generated, one by each router.",
     "source": "GATE Level Concept"
+  },
+  {
+    "id": 63,
+    "topic": "Transport Layer - Sockets",
+    "question": "The combination of an IP address and a port number is known as a: [GATE CS 2012]",
+    "options": {
+      "a": "Socket",
+      "b": "MAC Address",
+      "c": "URL",
+      "d": "Hostname"
+    },
+    "answer": "a",
+    "explanation": "A socket is an endpoint for communication in a network. In the context of TCP/IP, a socket is uniquely identified by the combination of an IP address and a port number. A full TCP connection is defined by a 4-tuple: (source_ip, source_port, dest_ip, dest_port)."
+  },
+  {
+    "id": 64,
+    "topic": "Data Link Layer - MAC",
+    "question": "An Ethernet frame has a minimum size of 64 bytes. This is to ensure: [GATE IT 2004]",
+    "options": {
+      "a": "The frame is large enough to hold a valid IP packet.",
+      "b": "The sender can detect a collision before it finishes transmitting.",
+      "c": "The receiver has enough time to process the frame.",
+      "d": "The CRC checksum is accurate."
+    },
+    "answer": "b",
+    "explanation": "The minimum frame size in CSMA/CD ensures that the transmission time is at least twice the maximum propagation delay (the slot time). This guarantees that if a collision occurs at the farthest point of the network, the jam signal will travel back to the sender while it is still transmitting, allowing for proper collision detection."
+  },
+  {
+    "id": 65,
+    "topic": "Network Security",
+    "question": "A firewall is typically placed between: [GATE CS 2010]",
+    "options": {
+      "a": "A router and a switch",
+      "b": "Two switches",
+      "c": "A trusted private network and an untrusted public network",
+      "d": "A host and its network interface card"
+    },
+    "answer": "c",
+    "explanation": "A firewall is a network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. Its primary function is to establish a barrier between a secure and trusted internal network (like a company's LAN) and an untrusted external network (like the Internet)."
+  },
+  {
+    "id": 66,
+    "topic": "Network Layer - Routing",
+    "question": "Dijkstra's algorithm is based on which algorithmic strategy? [GATE CS 2014]",
+    "options": {
+      "a": "Greedy",
+      "b": "Dynamic Programming",
+      "c": "Divide and Conquer",
+      "d": "Backtracking"
+    },
+    "answer": "a",
+    "explanation": "Dijkstra's algorithm is a classic greedy algorithm. At each step, it makes a locally optimal choice by selecting the unvisited vertex with the smallest known distance from the source. This greedy approach is guaranteed to find the globally optimal solution (the shortest path) as long as all edge weights are non-negative."
+  },
+  {
+    "id": 67,
+    "topic": "Transport Layer - TCP",
+    "question": "When a TCP sender receives a triple duplicate ACK, it performs a: [GATE CS 2015]",
+    "options": {
+      "a": "Slow start",
+      "b": "Fast retransmit and fast recovery",
+      "c": "Connection termination",
+      "d": "Congestion avoidance"
+    },
+    "answer": "b",
+    "explanation": "Receiving three duplicate ACKs is a strong indication to the TCP sender that a segment has been lost, but that the network is otherwise flowing (since subsequent segments are arriving). Instead of waiting for a full timeout, the sender performs a 'fast retransmit' of the lost segment immediately. It then enters the 'fast recovery' phase, reducing the congestion window but not as drastically as in a timeout, avoiding the slow start phase."
+  },
+  {
+    "id": 68,
+    "topic": "Data Link Layer - Error Control",
+    "question": "A simple parity check can detect: [GATE CS 2011]",
+    "options": {
+      "a": "All single-bit errors.",
+      "b": "All double-bit errors.",
+      "c": "An odd number of bit errors.",
+      "d": "An even number of bit errors."
+    },
+    "answer": "c",
+    "explanation": "A simple parity check bit is added to make the total number of '1's either even or odd. If an odd number of bits (1, 3, 5, etc.) flip during transmission, the parity of the received data will be wrong, and the error will be detected. If an even number of bits flip, the parity remains the same, and the error goes undetected."
+  },
+  {
+    "id": 69,
+    "topic": "Network Layer - Ancillary",
+    "question": "Which protocol is used by the `ping` command to test network connectivity? [GATE CS 2008]",
+    "options": {
+      "a": "TCP",
+      "b": "UDP",
+      "c": "ARP",
+      "d": "ICMP"
+    },
+    "answer": "d",
+    "explanation": "The `ping` utility works by sending ICMP (Internet Control Message Protocol) 'Echo Request' packets to a target host and waiting for an ICMP 'Echo Reply'. It is a fundamental tool for checking if a host is reachable and measuring the round-trip time."
+  },
+  {
+    "id": 70,
+    "topic": "Application Layer",
+    "question": "Which of the following is a stateless protocol? [GATE CS 2012]",
+    "options": {
+      "a": "FTP",
+      "b": "HTTP",
+      "c": "TCP",
+      "d": "POP3"
+    },
+    "answer": "b",
+    "explanation": "A stateless protocol is one where the server does not need to maintain any information (or state) about the client between requests. HTTP is a classic example; each request from a client is treated independently. While cookies can be used to create a stateful session on top of HTTP, the core protocol itself is stateless. FTP and POP3 are stateful, and TCP is a connection-oriented protocol that maintains state."
+  },
+  {
+    "id": 71,
+    "topic": "Network Layer - IP Addressing",
+    "question": "How many bits are there in an IPv6 address? [GATE CS 2010]",
+    "options": {
+      "a": "32",
+      "b": "48",
+      "c": "64",
+      "d": "128"
+    },
+    "answer": "d",
+    "explanation": "An IPv6 address is 128 bits in length, which is a massive increase from the 32 bits of an IPv4 address. This provides a virtually inexhaustible supply of IP addresses. IPv6 addresses are typically written as eight groups of four hexadecimal digits."
+  },
+  {
+    "id": 72,
+    "topic": "Transport Layer - TCP/UDP",
+    "question": "What is the range of well-known port numbers? [GATE CS 2011]",
+    "options": {
+      "a": "0 to 1023",
+      "b": "1024 to 49151",
+      "c": "49152 to 65535",
+      "d": "0 to 65535"
+    },
+    "answer": "a",
+    "explanation": "Port numbers are divided into three ranges by IANA (Internet Assigned Numbers Authority). The well-known ports, ranging from 0 to 1023, are assigned to common protocols and services (e.g., HTTP-80, FTP-21). The registered ports are from 1024 to 49151, and the dynamic or private ports are from 49152 to 65535."
+  },
+  {
+    "id": 73,
+    "topic": "Data Link Layer - MAC",
+    "question": "The 48-bit Ethernet address is also known as the: [GATE CS 2013]",
+    "options": {
+      "a": "IP address",
+      "b": "Logical address",
+      "c": "MAC address",
+      "d": "Port address"
+    },
+    "answer": "c",
+    "explanation": "The 48-bit address hardcoded into a Network Interface Card (NIC) is the MAC (Media Access Control) address. It is also known as the physical address or hardware address. It operates at the Data Link Layer and is used for addressing on a local network segment."
+  },
+  {
+    "id": 74,
+    "topic": "Network Security",
+    "question": "RSA is an example of which type of cryptography? [GATE CS 2014]",
+    "options": {
+      "a": "Symmetric-key",
+      "b": "Asymmetric-key",
+      "c": "Hash function",
+      "d": "Stream cipher"
+    },
+    "answer": "b",
+    "explanation": "RSA (Rivest–Shamir–Adleman) is the most widely used asymmetric-key (or public-key) cryptography algorithm. It uses a pair of keys: a public key for encryption and a private key for decryption. The security of RSA relies on the computational difficulty of factoring large integers."
+  },
+  {
+    "id": 75,
+    "topic": "Network Layer - Routing",
+    "question": "A link-state routing protocol like OSPF requires each router to: [GATE CS 2009]",
+    "options": {
+      "a": "Periodically send its entire routing table to its neighbors.",
+      "b": "Maintain a complete map of the network topology.",
+      "c": "Rely on its neighbors for path information.",
+      "d": "Use the Bellman-Ford algorithm."
+    },
+    "answer": "b",
+    "explanation": "In link-state routing, each router is responsible for discovering its neighbors and their link costs. It then broadcasts this information to all other routers in the network using Link State Packets (LSPs). This allows every router to build an identical and complete map of the network topology, upon which it runs an algorithm like Dijkstra's to find the shortest paths."
+  },
+  {
+    "id": 76,
+    "topic": "Data Link Layer - Error Control",
+    "question": "The remainder obtained from dividing x^7 + x^5 + 1 by the generator polynomial x^3 + 1 is: [GATE CS 2019]",
+    "options": { "a": "x^2 + x + 1", "b": "x^2 + 1", "c": "x + 1", "d": "1" },
+    "answer": "d",
+    "explanation": "This is a CRC calculation using polynomial division (modulo-2 arithmetic). Data polynomial: x^7 + x^5 + 1 (10100011). Generator: x^3 + 1 (1001). We perform binary division. 10100011000 / 1001. The remainder after performing the long division is 001, which corresponds to the polynomial 1."
+  },
+  {
+    "id": 77,
+    "topic": "Transport Layer - Basics",
+    "question": "The process of a network layer protocol providing services to the transport layer is an example of: [GATE CS 2011]",
+    "options": { "a": "Layering", "b": "Encapsulation", "c": "Multiplexing", "d": "Adjacent-layer interaction" },
+    "answer": "d",
+    "explanation": "In a layered architecture like the OSI or TCP/IP model, each layer provides services to the layer directly above it and requests services from the layer directly below it. This interaction between adjacent layers is a fundamental principle of network layering."
+  },
+  {
+    "id": 78,
+    "topic": "Network Layer - IP Addressing",
+    "question": "What is the default subnet mask for a Class A IP address? [GATE CS 2012]",
+    "options": { "a": "255.0.0.0", "b": "255.255.0.0", "c": "255.255.255.0", "d": "255.255.255.255" },
+    "answer": "a",
+    "explanation": "In the classful addressing scheme, a Class A address uses the first 8 bits for the network ID and the remaining 24 bits for the host ID. The default subnet mask reflects this, with all network bits set to 1 and all host bits set to 0. This gives 11111111.00000000.00000000.00000000, which is 255.0.0.0."
+  },
+  {
+    "id": 79,
+    "topic": "Basics",
+    "question": "What does NAT stand for? [GATE CS 2009]",
+    "options": { "a": "Network Access Translation", "b": "Network Address Transmission", "c": "Network Address Translation", "d": "Network Access Transmission" },
+    "answer": "c",
+    "explanation": "NAT stands for Network Address Translation. It is a method used by routers to map multiple private IP addresses within a local network to a single public IP address for communication with the Internet. This conserves the limited supply of public IPv4 addresses."
+  },
+  {
+    "id": 80,
+    "topic": "Data Link Layer - MAC",
+    "question": "A switch is a device that operates in which two layers of the OSI model? [GATE CS 2014]",
+    "options": { "a": "Physical and Data Link", "b": "Data Link and Network", "c": "Network and Transport", "d": "Physical and Network" },
+    "answer": "a",
+    "explanation": "A standard Layer 2 switch primarily operates at the Data Link layer, using MAC addresses to make forwarding decisions. However, since it is a physical device with ports that receive and transmit electrical signals (bits), it also inherently operates at the Physical layer. So, it functions at both Layer 1 and Layer 2."
+  },
+  {
+    "id": 81,
+    "topic": "Transport Layer - TCP",
+    "question": "If the TCP window size is 64 KB, what is the maximum number of bytes that can be sent before an acknowledgement is received? [GATE CS 2011]",
+    "options": { "a": "64000", "b": "65536", "c": "32768", "d": "128000" },
+    "answer": "b",
+    "explanation": "The TCP window size specifies the maximum number of bytes that can be in transit (sent but not yet acknowledged). If the window size is 64 KB, this is 64 * 1024 = 65,536 bytes. Therefore, the sender can send up to 65,536 bytes before it must stop and wait for an acknowledgement."
+  },
+  {
+    "id": 82,
+    "topic": "Network Layer - Ancillary",
+    "question": "Fragmentation of an IP packet is done by _______ and reassembly is done by _______. [GATE CS 2010]",
+    "options": { "a": "Source; Destination", "b": "Routers; Destination", "c": "Source and Routers; Destination", "d": "Source; Routers" },
+    "answer": "c",
+    "explanation": "In IPv4, fragmentation can be performed by the original source host or by any intermediate router along the path if a packet is too large for the next link's MTU. However, reassembly of the fragments back into the original packet is only ever performed by the final destination host."
+  },
+  {
+    "id": 83,
+    "topic": "Application Layer",
+    "question": "What is the function of SMTP (Simple Mail Transfer Protocol)? [GATE CS 2008]",
+    "options": { "a": "To transfer files between hosts.", "b": "To send and receive web pages.", "c": "To push electronic mail from a client to a server.", "d": "To retrieve electronic mail from a server." },
+    "answer": "c",
+    "explanation": "SMTP is the standard protocol for sending (pushing) email. A mail client uses SMTP to send a message to its outgoing mail server, and mail servers use SMTP to relay messages to each other. Protocols like POP3 or IMAP are used to retrieve (pull) mail from a server."
+  },
+  {
+    "id": 84,
+    "topic": "Data Link Layer - Flow Control",
+    "question": "Which of the following protocols is the most efficient in terms of link utilization for a link with a high bandwidth-delay product? [GATE CS 2013]",
+    "options": { "a": "Stop-and-Wait", "b": "Go-Back-N", "c": "Selective Repeat", "d": "All are equally efficient." },
+    "answer": "c",
+    "explanation": "A high bandwidth-delay product means the 'pipe' can hold many packets. Stop-and-Wait is very inefficient as it only sends one packet at a time. Go-Back-N is better but is inefficient if errors are frequent, as it retransmits many correct packets after a single error. Selective Repeat is the most efficient because it allows the receiver to accept and buffer out-of-order packets and only requests retransmission of the specific packets that were lost."
+  },
+  {
+    "id": 85,
+    "topic": "Network Layer - IP Addressing",
+    "question": "The loopback address in IPv4 is: [GATE CS 2014]",
+    "options": { "a": "0.0.0.0", "b": "255.255.255.255", "c": "127.0.0.1", "d": "192.168.0.1" },
+    "answer": "c",
+    "explanation": "The address 127.0.0.1 is the standard loopback address, also known as 'localhost'. Packets sent to this address are looped back to the same machine without being sent out onto the network. It's used for testing network software on a machine without requiring a physical network connection."
+  },
+  {
+    "id": 86,
+    "topic": "Transport Layer - TCP",
+    "question": "Consider a TCP connection with a maximum segment size (MSS) of 1KB. The Round Trip Time (RTT) is 100ms. If the sender uses the slow start algorithm, how long will it take for the congestion window to reach 16KB? [GATE CS 2016]",
+    "options": { "a": "100 ms", "b": "200 ms", "c": "300 ms", "d": "400 ms" },
+    "answer": "d",
+    "explanation": "In slow start, the congestion window (cwnd) doubles every RTT. Initial cwnd = 1 MSS = 1KB. \n- T=0: cwnd = 1KB. \n- T=100ms (1 RTT): cwnd = 2 * 1 = 2KB. \n- T=200ms (2 RTTs): cwnd = 2 * 2 = 4KB. \n- T=300ms (3 RTTs): cwnd = 2 * 4 = 8KB. \n- T=400ms (4 RTTs): cwnd = 2 * 8 = 16KB. \nIt will take 4 RTTs, which is 4 * 100ms = 400ms."
+  },
+  {
+    "id": 87,
+    "topic": "Data Link Layer - MAC",
+    "question": "A VLAN (Virtual LAN) allows for the creation of: [GATE CS 2015]",
+    "options": { "a": "Multiple collision domains on one switch.", "b": "Multiple broadcast domains on one switch.", "c": "A single broadcast domain across multiple switches.", "d": "A single collision domain across multiple switches." },
+    "answer": "b",
+    "explanation": "By default, a switch forms a single broadcast domain. VLANs are a way to partition a physical switch into multiple logical (virtual) switches. Each VLAN is a separate broadcast domain, meaning broadcast frames sent in one VLAN will not be forwarded to ports in another VLAN."
+  },
+  {
+    "id": 88,
+    "topic": "Network Layer - Routing",
+    "question": "What does 'split horizon' attempt to prevent in distance-vector routing? [GATE CS 2011]",
+    "options": { "a": "The count-to-infinity problem.", "b": "Slow convergence.", "c": "Large routing tables.", "d": "Both a and b." },
+    "answer": "d",
+    "explanation": "Split horizon is a technique where a router does not advertise a route back onto the interface from which it was learned. This helps prevent routing loops between adjacent routers, which is a major cause of both the slow convergence and the count-to-infinity problem in distance-vector protocols like RIP."
+  },
+  {
+    "id": 89,
+    "topic": "Application Layer",
+    "question": "Which HTTP method is idempotent? [GATE CS 2017]",
+    "options": { "a": "POST", "b": "PUT", "c": "GET", "d": "Both b and c" },
+    "answer": "d",
+    "explanation": "An operation is idempotent if making the same request multiple times has the same effect as making it once. GET is idempotent because it just retrieves data. PUT is idempotent because it updates a resource to a specific state; sending the same update multiple times has the same final result. POST is not idempotent because it is used to create a new resource, and sending it multiple times will create multiple new resources."
+  },
+  {
+    "id": 90,
+    "topic": "Transport Layer - UDP",
+    "question": "The UDP header has a fixed size of: [GATE CS 2010]",
+    "options": { "a": "8 bytes", "b": "16 bytes", "c": "20 bytes", "d": "32 bytes" },
+    "answer": "a",
+    "explanation": "The UDP header is very simple. It consists of four 2-byte fields: Source Port, Destination Port, Length, and Checksum. The total size is 4 * 2 = 8 bytes."
+  },
+  {
+    "id": 91,
+    "topic": "Network Layer - IP Addressing",
+    "question": "A company is assigned the CIDR block 112.10.0.0/16. They want to create 1024 subnets. What should the new subnet mask be? [GATE CS 2013]",
+    "options": { "a": "/16", "b": "/24", "c": "/26", "d": "/28" },
+    "answer": "c",
+    "explanation": "The original mask is /16. To create 1024 subnets, we need to borrow 'n' bits where 2^n ≥ 1024. Since 2^10 = 1024, we need to borrow 10 bits. The new subnet mask length will be the original length plus the borrowed bits: 16 + 10 = 26. The new mask is /26."
+  },
+  {
+    "id": 92,
+    "topic": "Data Link Layer - Basics",
+    "question": "A network bridge learns MAC addresses by inspecting which field of an incoming frame? [GATE CS 2012]",
+    "options": { "a": "Source MAC address", "b": "Destination MAC address", "c": "Preamble", "d": "CRC" },
+    "answer": "a",
+    "explanation": "A transparent bridge (or switch) builds its MAC address table by examining the source MAC address of every frame it receives. It records the source MAC address and the port on which the frame arrived. This allows it to learn which hosts are located on which of its ports."
+  },
+  {
+    "id": 93,
+    "topic": "Transport Layer - TCP",
+    "question": "Which flag in the TCP header is used to gracefully terminate a connection? [GATE CS 2014]",
+    "options": { "a": "SYN", "b": "FIN", "c": "RST", "d": "PSH" },
+    "answer": "b",
+    "explanation": "The FIN (Finish) flag is used to initiate a graceful connection termination. When a side has no more data to send, it sends a segment with the FIN flag set. This starts the four-way handshake to close the connection. The RST (Reset) flag is used for an abrupt, non-graceful termination."
+  },
+  {
+    "id": 94,
+    "topic": "Network Security",
+    "question": "SSL/TLS provides security at which layer of the OSI model? [GATE CS 2016]",
+    "options": { "a": "Application", "b": "Presentation", "c": "Session", "d": "Transport" },
+    "answer": "d",
+    "explanation": "SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are cryptographic protocols that provide security for communications over a network. They operate on top of the Transport Layer (TCP), providing an encrypted channel for Application Layer protocols like HTTP (creating HTTPS). While they handle session and presentation tasks, they are most accurately placed at the Transport Layer."
+  },
+  {
+    "id": 95,
+    "topic": "Network Layer - Ancillary",
+    "question": "What is the purpose of the 'Protocol' field in the IPv4 header? [GATE CS 2011]",
+    "options": { "a": "To identify the version of IP.", "b": "To identify the transport layer protocol of the payload.", "c": "To check for header errors.", "d": "To specify the total length of the packet." },
+    "answer": "b",
+    "explanation": "The 'Protocol' field is an 8-bit field that indicates the next-level protocol contained in the data portion of the IP datagram. For example, a value of 6 indicates that the payload is a TCP segment, and a value of 17 indicates it is a UDP datagram. This allows the network layer at the destination to pass the data up to the correct transport protocol."
+  },
+  {
+    "id": 96,
+    "topic": "Application Layer",
+    "question": "Which of the following is an example of a 'pull' protocol in email? [GATE CS 2010]",
+    "options": { "a": "SMTP", "b": "HTTP", "c": "POP3", "d": "FTP" },
+    "answer": "c",
+    "explanation": "In email, 'push' protocols are used to send mail from a client or server to another server (e.g., SMTP). 'Pull' protocols are used by a client to retrieve mail from a server. POP3 (Post Office Protocol 3) and IMAP are the two main pull protocols used by email clients."
+  },
+  {
+    "id": 97,
+    "topic": "Data Link Layer - MAC",
+    "question": "In a token ring network, a station seizes the token, changes one bit to make it a __________, and appends its data. [GATE CS 2009]",
+    "options": { "a": "start-of-frame sequence", "b": "end-of-frame sequence", "c": "acknowledgement frame", "d": "broadcast frame" },
+    "answer": "a",
+    "explanation": "In token ring, a small, free 'token' frame circulates the ring. A station wishing to transmit must wait for and capture this free token. It then changes a bit in the token (the T bit from 0 to 1) to transform it into a start-of-frame (SOF) delimiter, appends its data and control information, and sends this new data frame onto the ring."
+  },
+  {
+    "id": 98,
+    "topic": "Transport Layer - Congestion Control",
+    "question": "The ssthresh (slow start threshold) in TCP is initially set to a large value. When a timeout occurs, what is it typically set to? [GATE CS 2015]",
+    "options": {
+      "a": "It remains unchanged.",
+      "b": "It is set to 1 MSS.",
+      "c": "It is set to half of the current congestion window size.",
+      "d": "It is doubled."
+    },
+    "answer": "c",
+    "explanation": "A timeout is a strong indication of severe network congestion. When a timeout occurs, TCP takes aggressive action. It sets the slow start threshold (ssthresh) to half of the current congestion window size (min of cwnd/2 and receiver's window) and then resets the congestion window itself down to 1 MSS to begin a new slow start phase."
+  },
+  {
+    "id": 99,
+    "topic": "Network Layer - IP Addressing",
+    "question": "The subnet mask 255.255.255.248 corresponds to which CIDR prefix? [GATE CS 2013]",
+    "options": {
+      "a": "/28",
+      "b": "/29",
+      "c": "/30",
+      "d": "/27"
+    },
+    "answer": "b",
+    "explanation": "To find the CIDR prefix, we count the number of '1's in the binary representation of the subnet mask. 255 is eight '1's. So, the first three octets give 8 + 8 + 8 = 24 ones. The last octet is 248. In binary, 248 = 128+64+32+16+8 = 11111000. This has five '1's. The total number of ones is 24 + 5 = 29. Therefore, the CIDR prefix is /29."
+  },
+  {
+    "id": 100,
+    "topic": "Basics",
+    "question": "Which layer in the TCP/IP model is responsible for logical addressing and routing? [GATE CS 2011]",
+    "options": {
+      "a": "Application Layer",
+      "b": "Transport Layer",
+      "c": "Internet Layer",
+      "d": "Network Access Layer"
+    },
+    "answer": "c",
+    "explanation": "The Internet Layer in the TCP/IP model is responsible for logical addressing (IP addresses), routing packets from a source to a destination across one or more networks, and fragmentation. This layer corresponds to the Network Layer (Layer 3) of the OSI model."
   }
 ]
+
 
