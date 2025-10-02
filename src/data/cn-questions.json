@@ -1575,7 +1575,6 @@
     "answer": "b",
     "explanation": "An Ethernet frame begins with a 7-byte preamble (10101010...). This is followed by a 1-byte Start Frame Delimiter (SFD). The SFD has the bit pattern 10101011 and its purpose is to signal the end of the preamble and the beginning of the actual frame content (the destination MAC address)."
   },
-    [
   {
     "id": 151,
     "topic": "Network Layer - IP Addressing",
@@ -2067,3 +2066,4 @@
     "explanation": "We need to find the smallest integer 'n' (number of bits to borrow) such that 2^n ≥ 1000. \n2^9 = 512 (not enough). \n2^10 = 1024 (sufficient). \nTherefore, you need to borrow a minimum of 10 bits from the host portion of the Class B address."
   }
 ]
+
