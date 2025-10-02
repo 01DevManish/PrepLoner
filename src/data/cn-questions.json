@@ -2063,7 +2063,8 @@
     "question": "You have a Class B network address and need to create 1000 subnets. What is the minimum number of bits you need to borrow? [GATE CS 2012]",
     "options": { "a": "8", "b": "9", "c": "10", "d": "11" },
     "answer": "c",
-    "explanation": "We need to find the smallest integer 'n' (number of bits to borrow) such that 2^n ≥ 1000. \n2^9 = 512 (not enough). \n2^10 = 1024 (sufficient). \nTherefore, you need to borrow a minimum of 10 bits from the host portion of the Class B address."
+    "explanation": ""
   }
 ]
+
 
