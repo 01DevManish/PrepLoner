@@ -1074,7 +1074,6 @@
     "answer": "c",
     "explanation": "The bandwidth-delay product (4000 bits) tells us the capacity of the link in bits. To find the optimal window size in terms of frames, we divide this by the frame size. Optimal Window Size = Bandwidth-Delay Product / Frame Size = 4000 bits / 500 bits/frame = 8 frames. A window size of 8 will allow the sender to keep the link fully saturated."
   },
-  [
   {
     "id": 101,
     "topic": "Data Link Layer - MAC",
@@ -2066,5 +2065,4 @@
     "explanation": ""
   }
 ]
-
 
