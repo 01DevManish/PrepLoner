@@ -1,4 +1,6 @@
 'use client';
+export const runtime = 'edge';
+
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
@@ -271,4 +273,5 @@ export default function TestPage() {
       </div>
     </div>
   );
+
 }
