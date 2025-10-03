@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
@@ -100,4 +102,5 @@ export async function POST(request: Request) {
     }
     return NextResponse.json({ error: 'Authentication failed', details: errorMessage }, { status: 500 });
   }
+
 }
