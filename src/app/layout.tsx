@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"; // Correct import for App Router
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import Header from '@/components/layout/Header'; // Import Header
-import Footer from '@/components/layout/Footer'; // Import Footer
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +28,17 @@ export default function RootLayout({
         </main>
         <Footer />
         <Toaster />
+
+        {/* --- ANALYTICS --- */}
+        {/* This ensures analytics only run on your live website */}
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <GoogleAnalytics />
+            <Analytics />
+          </>
+        )}
+        {/* --- END ANALYTICS --- */}
+        
       </body>
     </html>
   );
