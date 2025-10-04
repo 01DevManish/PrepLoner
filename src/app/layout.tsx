@@ -5,7 +5,6 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +32,6 @@ export default function RootLayout({
         {/* This ensures analytics only run on your live website */}
         {process.env.NODE_ENV === "production" && (
           <>
-            <GoogleAnalytics />
             <Analytics />
           </>
         )}
