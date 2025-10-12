@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { auth } from '@/lib/firebaseClient';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
+import { MenuIcon } from 'lucide-react';
 
-import { Button } from "../../components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +21,15 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/Sheet";
+import UserStats from "@/components/layout/UserStats";
 
+const navLinks = [
+  { href: "/exams", label: "Exams" },
+  { href: "/previous-year-papers", label: "Previous Year Papers" },
+  { href: "/notes", label: "Notes" },
+];
 
 export default function Header() {
   const [user, setUser] = useState<User | null>(null);
@@ -52,21 +61,27 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-extrabold text-black-200">
+            <Link href="/" className="text-2xl font-extrabold text-gray-900 dark:text-white">
               PrepLoner
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            {/* --- UPDATED LINKS --- */}
-            <Link href="/exams" className="text-gray-600 hover:text-blue-600 font-medium">Exams</Link>
-            <Link href="/previous-year-papers" className="text-gray-600 hover:text-blue-600 font-medium">Previous Year Papers</Link>
-            <Link href="/notes" className="text-gray-600 hover:text-blue-600 font-medium">Notes</Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium transition-colors ${pathname === link.href ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'}`}>
+                {link.label}
+              </Link>
+            ))}
           </div>
           <div className="flex items-center gap-4">
+            <UserStats />
+            <ThemeToggle />
             {user && !user.isAnonymous ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -94,10 +109,45 @@ export default function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link href="/login">
-                <Button>Login / Sign Up</Button>
+              <Link href="/login" className="hidden md:block">
+                <Button>Login</Button>
               </Link>
             )}
+            <div className="md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <MenuIcon className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <div className="flex flex-col space-y-4">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`font-medium transition-colors ${pathname === link.href ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'}`}>
+                        {link.label}
+                      </Link>
+                    ))}
+                    <div className="border-t border-gray-200 dark:border-gray-800 pt-4">
+                      {user && !user.isAnonymous ? (
+                        <div className="flex flex-col space-y-2">
+                           <Link href="/dashboard">
+                            <Button variant="outline" className="w-full">Dashboard</Button>
+                          </Link>
+                          <Button onClick={handleLogout} variant="outline" className="w-full">Log out</Button>
+                        </div>
+                       ) : (
+                        <Link href="/login">
+                          <Button className="w-full">Login / Sign Up</Button>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>

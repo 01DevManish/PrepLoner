@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
       <div className="max-w-3xl mx-auto">
         <div className="prose prose-lg prose-blue text-gray-700 mx-auto">
           <h1>Privacy Policy for PrepLoner</h1>
-          <p><strong>Last updated:</strong> October 02, 2025</p>
+          <p><strong>Last updated:</strong> October 02, 2023</p>
 
           <p>
             Welcome to PrepLoner. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our web application.

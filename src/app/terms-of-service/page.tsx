@@ -4,7 +4,7 @@ export default function TermsOfServicePage() {
         <div className="max-w-3xl mx-auto">
           <div className="prose prose-lg prose-blue text-gray-700 mx-auto">
             <h1>Terms of Service for PrepLoner</h1>
-            <p><strong>Last updated:</strong> October 02, 2025</p>
+            <p><strong>Last updated:</strong> October 02, 2023</p>
 
             <h2>1. Acceptance of Terms</h2>
             <p>

@@ -20,7 +20,7 @@ import cnQuestions from '@/data/cn-questions.json';
 
 import { auth, db } from '@/lib/firebaseClient';
 import { User, onAuthStateChanged, signInAnonymously, GoogleAuthProvider, signInWithPopup, linkWithCredential } from 'firebase/auth';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, doc, setDoc, increment } from 'firebase/firestore';
 
 type Question = {
   id: number;
@@ -64,7 +64,7 @@ export default function TestPage() {
     return () => unsubscribe();
   }, []);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     let finalScore = 0;
     topicQuestions.forEach((q) => {
       if (userAnswers[q.id]?.selectedOption === q.answer) finalScore++;
@@ -72,7 +72,12 @@ export default function TestPage() {
     setScore(finalScore);
     setIsSubmitted(true);
     setIsReviewMode(false);
-  }, [topicQuestions, userAnswers]);
+
+    if (user) {
+      const userDocRef = doc(db, 'users', user.uid);
+      await setDoc(userDocRef, { xp: increment(10) }, { merge: true });
+    }
+  }, [topicQuestions, userAnswers, user]);
 
   const handleSaveResults = async () => {
     if (!user) return alert("An error occurred with your session. Please try again.");

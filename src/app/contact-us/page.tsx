@@ -1,9 +1,22 @@
+'use client';
+
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactUsPage() {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    // Here you would typically send the form data to an API endpoint
+    // For now, we'll just simulate a delay.
+    setTimeout(() => setStatus('Message sent!'), 2000);
+  };
+
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
@@ -35,7 +48,7 @@ export default function ContactUsPage() {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-2">
               <Label htmlFor="name">Full Name</Label>
               <Input id="name" type="text" placeholder="Your Name" />
@@ -49,6 +62,9 @@ export default function ContactUsPage() {
               <Textarea id="message" placeholder="Your message..." rows={5} />
             </div>
             <Button type="submit" className="w-full">Send Message</Button>
+            {status && (
+              <p className="text-center text-sm text-gray-600">{status}</p>
+            )}
           </form>
         </div>
       </div>
